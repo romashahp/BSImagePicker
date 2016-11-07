@@ -399,7 +399,15 @@ extension PhotosViewController {
                 }
             }
         }
-
+else{
+  DispatchQueue.main.async(execute: {
+           let alert = UIAlertController(title: , message: "You can only upload 15 photos at a time", preferredStyle: .alert)
+           alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (act) -> Void in
+               //alert.dismissViewControllerAnimated(true, completion: nil)
+           }))
+           self.present(alert, animated: true, completion: nil)
+       })
+}
         return false
     }
     
